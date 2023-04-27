@@ -1,0 +1,36 @@
+image_res: 384
+second_input_size: 384
+vision_width: 1024
+embed_dim: 256
+batch_size_train: 32
+batch_size_test: 16
+alpha: 0.4
+warm_up: False
+
+# nouse hyperparams
+max_length: 25
+num_beams: 1
+temperature: 1
+top_k: 0
+top_p: 1
+repetition_penalty: 1
+length_penalty: 1
+early_stopping: false
+num_return_sequences: 1
+init_encoder: False
+init_decoder: False
+last_hidden_id_shift: 1
+
+bert_config: 'configs/config_bert.json'
+# dalle
+discrete_vae_weight_path: "vqgan_ckpt"
+discrete_vae_type: "vqgan"
+
+optimizer: {opt: adamW, lr: 2e-5, weight_decay: 0.02}
+schedular: {sched: linear, last_epoch: -1, epochs: 10, warmup_epochs: 1}
+
+
+
+
+
+

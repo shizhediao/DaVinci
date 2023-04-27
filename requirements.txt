@@ -1,0 +1,23 @@
+axial_positional_embedding
+omegaconf
+pytorch_lightning
+g-mlp-pytorch
+rotary-embedding-torch
+timm==0.4.9
+transformers==4.10.1
+ruamel_yaml
+opencv-python
+scikit-image
+pandas
+tqdm
+pycocotools
+pycocoevalcap
+einops
+attrs
+tensorboardX
+pytorch-lightning
+protobuf~=3.19.0
+accelerate
+datasets >= 1.8.0
+scipy
+scikit-learn

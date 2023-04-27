@@ -1,0 +1,9 @@
+.idea
+data
+images
+results
+*.pyc
+__pycache__
+apex
+coco.tar
+visualgenome.tar
