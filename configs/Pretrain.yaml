@@ -1,0 +1,52 @@
+train_file: ["path/to/image_text_pair/data"]
+c4_train_file: ["path/to/c4/data"]
+
+image_name: "binary"
+caption_name: "desc"
+train_file_tokenized: false
+train_dataset_size: 1335283
+checkpoint_frequent: 10000
+bert_config: 'configs/config_bert.json'
+init_encoder: False
+init_decoder: False
+
+image_res: 256
+second_input_size: 256
+vision_width: 1024
+embed_dim: 256
+batch_size: 64
+batch_size_c4: 64
+temp: 0.07
+dalle_goal: "mask"
+prefix_image: "dynamic"
+max_prefix_image_epoch: -1
+
+context_max_length: 25
+max_length: 25
+enc_max_words: 96
+dec_max_words: 256
+enc_max_tokens: 256
+dec_max_tokens: 256
+enc_dec_max_words: 512
+loss_pair_alpha: 1
+loss_image_generation_alpha: 1
+c4_alpha: 1
+loss_mim_alpha: 0
+
+num_beams: 1
+temperature: 1
+top_k: 0
+top_p: 1
+repetition_penalty: 1
+length_penalty: 1
+early_stopping: false
+num_return_sequences: 1
+eos: '[SEP]'
+
+# dalle
+discrete_vae_weight_path: "vqgan_ckpt"
+discrete_vae_type: "vqgan"
+
+optimizer: {opt: adamW, lr: 2e-4, weight_decay: 0.01}
+schedular: {sched: linear, last_epoch: -1, epochs: 40, warmup_epochs: 1}
+accelerator: {SYNCBN: false, FP16_OPT_LEVEL: O1, FP16_LOSS_SCALE: dynamic, RNG_SEED: 42, GRAD_ACCUMULATE_STEPS: 1, CLIP_GRAD_NORM: 1.0}

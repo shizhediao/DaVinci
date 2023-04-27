@@ -1,0 +1,37 @@
+train_file: './data/coco_train.json'
+val_file: './data/coco_test.json'
+test_file: './data/coco_test.json'
+           
+bert_config: 'configs/config_bert.json'
+init_encoder: False
+init_decoder: False
+
+image_root: './images/coco/'
+
+image_res: 576
+second_input_size: 192
+vision_width: 1024
+embed_dim: 256
+batch_size_train: 24
+batch_size_test: 6
+temp: 0.07
+
+max_length: 20
+num_beams: 2
+temperature: 1
+top_k: 0
+top_p: 1
+repetition_penalty: 1
+length_penalty: 1
+early_stopping: False
+num_return_sequences: 1
+eos: '[SEP]'
+prompt: 'a picture of '
+label_smoothing: 0.1
+
+# dalle
+discrete_vae_weight_path: "vqgan_ckpt"
+discrete_vae_type: "vqgan"
+
+optimizer: {opt: adamW, lr: 1e-5, weight_decay: 0.02}
+schedular: {sched: linear, last_epoch: -1, epochs: 15, warmup_epochs: 2}

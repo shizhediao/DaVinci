@@ -1,0 +1,45 @@
+train_file: ['./data/vqa_train.json',
+             './data/vqa_val.json',
+             './data/vg_qa.json']
+val_file: ['./data/vqa_val.json'] 
+test_file: ['./data/vqa_test.json']
+answer_list: './vqaTools/answer_list.json'
+
+vqa_root: './images/coco/'
+vg_root: './images/visualgenome/'
+
+image_res: 480
+second_input_size: 240
+vision_width: 1024
+embed_dim: 256
+temp: 0.07
+batch_size_train: 24
+batch_size_test: 24
+
+alpha: 0.4
+num_answers: 3129
+context_max_length: 25
+max_length: 25
+num_beams: 1
+temperature: 1
+top_k: 0
+top_p: 1
+repetition_penalty: 1
+length_penalty: 1
+early_stopping: false
+num_return_sequences: 1
+eos: '[SEP]'
+loss_type: 'bce'
+k_test: 128
+
+bert_config: 'configs/config_bert.json'
+init_encoder: False
+init_decoder: False
+
+# dalle
+discrete_vae_weight_path: "vqgan_ckpt"
+discrete_vae_type: "vqgan"
+
+optimizer: {opt: adamW, lr: 2e-5, weight_decay: 0.02}
+schedular: {sched: linear, last_epoch: -1, epochs: 8, warmup_epochs: 4}
+

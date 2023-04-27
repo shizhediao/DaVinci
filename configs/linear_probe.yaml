@@ -1,0 +1,38 @@
+dataset: imagenet
+root_dir: ./
+
+image_res: 256
+second_input_size: 128
+vision_width: 1024
+embed_dim: 256
+temp: 0.07
+batch_size_train: 256
+batch_size_test: 256
+train_dataset_size: 1281167
+
+alpha: 0.4
+num_answers: 3129
+context_max_length: 25
+max_length: 25
+num_beams: 1
+temperature: 1
+top_k: 0
+top_p: 1
+repetition_penalty: 1
+length_penalty: 1
+early_stopping: false
+num_return_sequences: 1
+eos: '[SEP]'
+loss_type: 'kl'
+
+bert_config: 'configs/config_bert.json'
+init_encoder: False
+init_decoder: False
+
+# dalle
+discrete_vae_weight_path: "./vqgan_ckpt"
+discrete_vae_type: "vqgan"
+
+optimizer: {opt: adamW, lr: 6e-4, weight_decay: 0.01}
+schedular: {sched: linear, last_epoch: -1, epochs: 100, warmup_epochs: 10}
+accelerator: {SYNCBN: false, FP16_OPT_LEVEL: O1, FP16_LOSS_SCALE: dynamic, RNG_SEED: 42, GRAD_ACCUMULATE_STEPS: 1, CLIP_GRAD_NORM: 1.0}
