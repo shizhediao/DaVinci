@@ -1,6 +1,6 @@
 ## Prefix Language Models are Unified Modal Learners
 
-This is the official PyTorch implementation of the <a href="https://arxiv.org/abs/2206.07699">DaVinci paper</a>. 
+This is the official PyTorch implementation of the ICLR 2023 paper entitled <a href="https://arxiv.org/abs/2206.07699">Write and Paint: Generative Vision-Language Models are Unified Modal Learners</a>. 
 This repository supports pre-training on custom datasets, as well as finetuning on (1) text understanding, (2) image understanding, (3) text-to-image generation, (4) image-to-text generation, (5) multi-modal understanding tasks.
 Our implementation is built on the source code from <a href="https://github.com/salesforce/ALBEF">ALBEF</a>.
 
@@ -158,10 +158,10 @@ python image_linprobe.py \
 ### Citation
 If you use or extend our work, please consider citing our paper:
 <pre>
-@article{diao2022prefix,
-  title={Prefix Language Models are Unified Modal Learners},
+@inproceedings{diao2023write,
+  title={Write and Paint: Generative Vision-Language Models are Unified Modal Learners},
   author={Diao, Shizhe and Zhou, Wangchunshu and Zhang, Xinsong and Wang, Jiawei},
-  journal={arXiv preprint arXiv:2206.07699},
-  year={2022}
+  booktitle={The Eleventh International Conference on Learning Representations},
+  year={2023}
 }
-}</pre>
+</pre>
